@@ -3,14 +3,16 @@ function compute()
     var p = document.getElementById("principal").value;
     var r = document.getElementById("rate").value;
     var y = document.getElementById("years").value;
-    var year = new Date().getFullYear()+parseInt(years);
+
+    var dateNow = new Date();
+    var yearNow = parseInt(dateNow.getFullYear()) + parseInt(y);
 
     var cal = p * r/100 * y;
 
     document.getElementById("result").innerHTML = `If ypu deposit ${p}, 
                                                     \nat an interest rate of ${r}%.\n
                                                     You will receive an amount of ${cal},\n
-                                                    in the year ${year + parseInt(y)}`;
+                                                    in the year ${yearNow}`;
    
 }
         
